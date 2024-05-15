@@ -1,0 +1,173 @@
+header, main {
+  background-color: #3399FF;
+  background: -moz-linear-gradient(0% 0 270deg, #3399FF, #3399FF) repeat scroll 0 0 transparent;
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#3399FF), to(#3399FF), color-stop(.1,#3399FF),color-stop(.9,#3399FF));
+}
+
+body {
+  background-color: #D4FFFF;
+  background: -moz-linear-gradient(0% 0 270deg, #D4FFFF, #D4FFFF) repeat scroll 0 0 transparent;
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#D4FFFF), to(#D4FFFF), color-stop(.1,#D4FFFF),color-stop(.9,#D4FFFF));
+  color: var(--bs-white);
+}
+
+fieldset {
+  padding: 5px;
+  margin-bottom: 5px;
+}
+
+legend {
+  border-bottom: 1px solid #6c757d;
+}
+
+.input-group {
+  margin-bottom: 1em;
+}
+
+div.input-group:last-child {
+  margin-bottom: inherit;
+}
+
+.input-group-text.form-control {
+  background-color: var(--bs-body-bg);
+}
+
+.input-group-text {
+  text-align: initial;
+  font-size: 0.95rem;
+}
+
+fieldset#form-fieldset-preselect > .input-group:nth-child(2) > .input-group-text {
+  white-space: normal;
+}
+
+#content {
+  background: none repeat scroll 0 0 #FFFFD4;
+  border-radius: 5px 5px 5px 5px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+  color: var(--bs-body-color);
+}
+
+.article {
+  padding: 5px 10px 3px 10px;
+  margin-bottom: 20px;
+  background-color: #f5f5f5;
+  border: 1px solid #666;
+  border-radius: 6px;
+  box-shadow: 2px 2px 2px #666;
+}
+
+form.article {
+  padding: 0px 10px 49px 10px;
+}
+
+form#registrationform fieldset {
+  padding: 10px;
+}
+
+form#registrationform .btn.btn-primary {
+  margin-right: 10px;
+  float: right;
+}
+
+footer {
+  background: -moz-linear-gradient(0% 100% 90deg,#D4FFFF, #FFFFFF);
+  background: -webkit-gradient(linear, 0% 100%, 0% 0%, from(#D4FFFF), to(#FFFFFF));
+  background: -o-linear-gradient(top, #FFFFFF, #D4FFFF);
+  background: -ms-linear-gradient(top, #FFFFFF, #D4FFFF);
+  background: linear-gradient(top, #FFFFFF, #D4FFFF);
+  padding-top: 10px;
+  padding-bottom: 2px;
+}
+
+#main-bottom {
+  background: none repeat scroll 0 0 #3399FF;
+  background: -moz-linear-gradient(0% 0 270deg, #3399FF, #FFFFFF) repeat scroll 0 0 transparent;
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#3399FF), to(#FFFFFF));
+  background: -o-linear-gradient(top, #3399FF, #fff);
+  background: -ms-linear-gradient(top, #3399FF, #FFFFFF);
+  background: linear-gradient(top, #3399FF, #FFFFFF);
+  padding-bottom: 30px;
+}
+
+div#content > .row:first-child {
+  padding-top: 12px;
+}
+
+div#content > .row:last-child {
+  padding-bottom: 12px;
+}
+
+span.col-form-label:has( + :required)::after {
+  color: grey;
+  content: "*";
+  padding-left: 0.1em;
+}
+
+.more-btn {
+  margin: 0.2em;
+  float: right;
+}
+
+.more-btn + * {
+  clear: both;
+}
+
+.alert-warning > .warning-symbol {
+  font-size: 1.7em;
+  margin-right: 0.3em;
+  font-style: normal;
+}
+
+.alert-warning > .warning-symbol::before {
+  content: "\26A0";
+}
+
+#form-alert {
+  display: none;
+}
+
+#form-alert-text {
+  margin-left: 0.3em;
+}
+
+header > div.container > h1 {
+  padding-bottom: 0.5rem;
+  margin-bottom: 0rem;
+}
+
+.navbar-nav {
+  --bs-nav-link-color: #FFF;
+}
+
+#navcol-5 .active {
+  font-weight: bolder;
+}
+
+@media only all and (max-width: 576px) {
+  .input-group-text {
+    padding: .375rem .2rem;
+  }
+}
+
+@media only all and (max-width: 370px) {
+  fieldset#form-fieldset-preselect > .input-group > .input-group-text {
+    white-space: normal;
+  }
+}
+
+@media only all and (max-width: 335px) {
+  fieldset#form-fieldset-preselect > .input-group > .input-group-text {
+    word-break: break-word;
+  }
+}
+
+@media (min-width: 992px) {
+  .col > h1 {
+    -webkit-hyphens: auto;
+    hyphens: auto;
+  }
+}
+

@@ -1,0 +1,10 @@
+header, footer, #main-bottom, #content > .row > .col:first-child, #content > .row > .col:last-child, .btn {
+  display: none;
+}
+
+.article {
+  background-color: #f5f5f5;
+  border: 0px solid #666;
+  box-shadow: 0px 0px 0px #666;
+}
+
