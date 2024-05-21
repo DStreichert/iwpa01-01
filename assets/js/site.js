@@ -131,10 +131,12 @@ function start() {
                 localStorage.setItem("registrationform", JSON.stringify(intermediateObject));
                 if (window.location.hostname === "dstreichert.github.io") {
                     let path = window.location.pathname.split("/").slice(0);
-                    path[path.length-1] = "registrierungsbestaetigung.html";
+                    path[path.length - 1] = "registrierungsbestaetigung.html";
                     window.location.pathname = path.join("/");
+                    return false;
+                } else {
+                    return true;
                 }
-                return true;
             } catch (error) {
                 console.error(error);
                 return false;
