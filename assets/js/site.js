@@ -129,7 +129,9 @@ function start() {
                 });
                 // Form data is converted into a JSON string and this is stored in localStorage
                 localStorage.setItem("registrationform", JSON.stringify(intermediateObject));
-                if (window.location.hostname === "dstreichert.github.io") {
+                let host = window.location.hostname.split(".");
+                host.shift();
+                if (host.join(".") === "github.io") {
                     let path = window.location.pathname.split("/").slice(0);
                     path[path.length - 1] = document.getElementById("registrationform").getAttribute("action");
                     window.location.pathname = path.join("/");
