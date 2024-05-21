@@ -37,7 +37,11 @@ div.input-group:last-child {
   font-size: 0.95rem;
 }
 
-fieldset#form-fieldset-preselect > .input-group:nth-child(2) > .input-group-text {
+form#registrationform > fieldset#form-fieldset-preselect > .input-group:nth-child(2) > .input-group-text {
+  white-space: normal;
+}
+
+div#regForm > fieldset#form-fieldset-preselect > .input-group:nth-child(3) > .input-group-text {
   white-space: normal;
 }
 

@@ -10,12 +10,12 @@ function change_handover_type_requirements(value) {
         for (let i = 0; i < formPickupAddressFields.length; i++) {
             formPickupAddressFields[i].setAttribute("required", "true");
         }
-        document.getElementById("pickup-datetime").setAttribute("required", "true");
+        document.getElementById("pickup_datetime").setAttribute("required", "true");
     } else {
         for (let i = 0; i < formPickupAddressFields.length; i++) {
             formPickupAddressFields[i].removeAttribute("required");
         }
-        document.getElementById("pickup-datetime").removeAttribute("required");
+        document.getElementById("pickup_datetime").removeAttribute("required");
     }
 }
 
@@ -82,11 +82,11 @@ function start() {
     }
     let registrationform = document.getElementById("registrationform");
     if (registrationform !== null) {
-        loadSelect("kleiderarten.txt", "clothing-types");
-        loadSelect("krisengebiete.txt", "crisis-areas");
+        loadSelect("kleiderarten.txt", "clothing_types");
+        loadSelect("krisengebiete.txt", "crisis_areas");
         let date = new Date();
         // Minimum pickup time is set to now
-        document.getElementById("pickup-datetime").min = date.toISOString().substring(0, 10) + "T" + date.toLocaleTimeString().substring(0, 5);
+        document.getElementById("pickup_datetime").min = date.toISOString().substring(0, 10) + "T" + date.toLocaleTimeString().substring(0, 5);
         change_handover_type();
         registrationform.onsubmit = function () {
             try {
@@ -96,7 +96,7 @@ function start() {
                     const plz = "12";
                     let alertMessage;
                     let pickupPostalCode = document.getElementById("pickup_address_postal_code");
-                    let pickupDatetime = document.getElementById("pickup-datetime");
+                    let pickupDatetime = document.getElementById("pickup_datetime");
                     // Form data is validated
                     if (pickupPostalCode.value.substring(0, 2) !== plz) {
                         alertMessage = "Die Abholadresse ist zu weit entfernt. Bitte übergeben Sie uns Ihre Spende daher in der Geschäftsstelle.";
@@ -112,7 +112,7 @@ function start() {
                     }
                 } else {
                     // Put the current date in the field
-                    document.getElementById("pickup-datetime").value = currentDateTime.toISOString().substring(0, 10) + "T" + currentDateTime.toLocaleTimeString().substring(0, 5);
+                    document.getElementById("pickup_datetime").value = currentDateTime.toISOString().substring(0, 10) + "T" + currentDateTime.toLocaleTimeString().substring(0, 5);
                 }
                 // Data entered in the form is transferred to an object
                 let intermediateObject = {};
@@ -140,13 +140,13 @@ function start() {
         let registrationformData = JSON.parse(localStorage.getItem("registrationform"));
         // The entered form data is inserted into the appropriate elements for display
         document.getElementById("formSelectHandoverText").innerText = registrationformData.formSelectHandover === "pickup" ? "Abholung" : "Übergabe an der Geschäftsstelle";
-        document.getElementById("clothing-types").innerText = typeof registrationformData.clothing_types === "object" ? registrationformData.clothing_types.join(" ") : registrationformData.clothing_types;
-        document.getElementById("crisis-areas").innerText = registrationformData.crisis_areas;
-        document.getElementById("pickup-address-name").innerText = registrationformData.pickup_address_name;
-        document.getElementById("pickup-address-street").innerText = registrationformData.pickup_address_street;
-        document.getElementById("pickup-address-postal-code").innerText = registrationformData.pickup_address_postal_code;
-        document.getElementById("pickup-address-city").innerText = registrationformData.pickup_address_city;
-        document.getElementById("pickup-datetime").innerText = (new Date(registrationformData.pickup_datetime)).toLocaleString(
+        document.getElementById("clothing_types").innerText = typeof registrationformData.clothing_types === "object" ? registrationformData.clothing_types.join(" ") : registrationformData.clothing_types;
+        document.getElementById("crisis_areas").innerText = registrationformData.crisis_areas;
+        document.getElementById("pickup_address_name").innerText = registrationformData.pickup_address_name;
+        document.getElementById("pickup_address_street").innerText = registrationformData.pickup_address_street;
+        document.getElementById("pickup_address_postal_code").innerText = registrationformData.pickup_address_postal_code;
+        document.getElementById("pickup_address_city").innerText = registrationformData.pickup_address_city;
+        document.getElementById("pickup_datetime").innerText = (new Date(registrationformData.pickup_datetime)).toLocaleString(
             "de-DE", {
             dateStyle: "full",
             timeStyle: "long"
