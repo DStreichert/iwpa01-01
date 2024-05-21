@@ -1,4 +1,4 @@
-"use strict";
+ "use strict";
 
 /**
  * Adds the attribute required to the fields to be filled if value = pickup, if not it is removed.
@@ -149,7 +149,7 @@ function start() {
         let registrationformData = JSON.parse(localStorage.getItem("registrationform"));
         // The entered form data is inserted into the appropriate elements for display
         document.getElementById("formSelectHandoverText").innerText = registrationformData.formSelectHandover === "pickup" ? "Abholung" : "Übergabe an der Geschäftsstelle";
-        document.getElementById("clothing_types").innerText = typeof registrationformData.clothing_types === "object" ? registrationformData.clothing_types.join(" ") : registrationformData.clothing_types;
+        document.getElementById("clothing_types").innerText = typeof registrationformData.clothing_types === "object" ? registrationformData.clothing_types.join("\n") : registrationformData.clothing_types;
         document.getElementById("crisis_areas").innerText = registrationformData.crisis_areas;
         document.getElementById("pickup_address_name").innerText = registrationformData.pickup_address_name;
         document.getElementById("pickup_address_street").innerText = registrationformData.pickup_address_street;
